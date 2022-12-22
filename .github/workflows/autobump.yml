@@ -1,0 +1,31 @@
+name: Autobump Casks
+
+on:
+  # Run every day at 8:00 AM
+  schedule:
+  - cron: '0 8 * * *'
+  workflow_dispatch:
+
+env:
+  HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
+  CASKS: >
+    m1xxx
+
+jobs:
+  autobump:
+    if: github.repository == 'fwcd/homebrew-mixxx'
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+
+    steps:
+    - name: Set up Homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+    - name: Set up Git user
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Bump casks
+      run: brew bump --open-pr --casks ${{ env.CASKS }}
+      env:
+        HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
