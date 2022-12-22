@@ -1,4 +1,4 @@
-name: Autobump Casks
+name: Autobump
 
 on:
   # Run every day at 8:00 AM
