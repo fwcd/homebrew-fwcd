@@ -8,8 +8,12 @@ cask "m1xxx" do
   homepage "https://github.com/fwcd/m1xxx"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url 'https://github.com/fwcd/m1xxx/releases/latest'
+    regex /tag\/v([\w\.\-]+)/
+    strategy :header_match do |headers, regex|
+      next if headers['location'].blank?
+      headers['location'].scan(regex).map { |match| match[0] }
+    end
   end
 
   app "Mixxx.app"
