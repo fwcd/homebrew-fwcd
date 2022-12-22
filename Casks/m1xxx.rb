@@ -7,5 +7,10 @@ cask "m1xxx" do
   desc "Unofficial Mixxx build for Apple Silicon (arm64 macOS)"
   homepage "https://github.com/fwcd/m1xxx"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   app "Mixxx.app"
 end
