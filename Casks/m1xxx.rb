@@ -1,5 +1,5 @@
 cask "m1xxx" do
-  version "2.4.0-alpha-pre-929fa9d"
+  version "2.4.0-0-929fa9d"
   sha256 "a712510ffb31b2db614a74edd3e93630603fee49ade367f53564e274ff75f5b7"
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version.split('-').last}.dmg"
