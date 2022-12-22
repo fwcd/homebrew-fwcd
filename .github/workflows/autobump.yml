@@ -26,6 +26,9 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
     - name: Bump casks
-      run: brew bump --open-pr --casks ${{ env.CASKS }}
+      run: |
+        for cask in ${{ env.CASKS }}; do
+          brew bump-cask-pr --no-fork --no-browse $cask
+        done
       env:
         HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
