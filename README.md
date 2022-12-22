@@ -15,7 +15,7 @@ brew tap fwcd/mixxx
 To install [`m1xxx`](https://github.com/fwcd/m1xxx), run
 
 ```sh
-brew install m1xxx
+brew install --cask m1xxx
 ```
 
 after following the installation steps above.
