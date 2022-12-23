@@ -32,6 +32,7 @@ jobs:
         for cask in ${{ env.CASKS }}; do
           echo "==> Checking $cask..."
           status_json=`brew livecheck --json $cask`
+          echo "Status: $status_json"
 
           if jq -e '.[0].version.outdated' <<< "$status_json" >/dev/null; then
             latest_version=`jq -r '.[0].version.latest' <<< "$status_json"`
