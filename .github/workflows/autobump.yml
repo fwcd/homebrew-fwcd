@@ -14,9 +14,7 @@ env:
 jobs:
   autobump:
     if: github.repository == 'fwcd/homebrew-mixxx'
-    runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/homebrew/ubuntu22.04:master
+    runs-on: macos-latest
 
     steps:
     - name: Set up Homebrew
