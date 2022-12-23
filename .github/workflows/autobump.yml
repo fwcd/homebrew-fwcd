@@ -25,7 +25,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
     - name: Bump casks
-      run:
+      run: |
         set -e
         cd "$(brew --repo fwcd/mixxx)"
 
@@ -40,8 +40,11 @@ jobs:
             brew bump-cask-pr --write-only --commit --version "$latest_version" $cask
           fi
         done
-
-        git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/fwcd/homebrew-mixxx.git"
       shell: bash
       env:
         HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Push changes
+      run: |
+        set -e
+        cd "$(brew --repo fwcd/mixxx)"
+        git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/fwcd/homebrew-mixxx.git"
