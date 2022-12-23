@@ -4,7 +4,7 @@ cask "m1xxx" do
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version.split("-").last}.dmg"
   name "M1xxx"
-  desc "Unofficial Mixxx build for Apple Silicon (arm64 macOS)"
+  desc "Unofficial Mixxx build for Apple Silicon"
   homepage "https://github.com/fwcd/m1xxx"
 
   livecheck do
