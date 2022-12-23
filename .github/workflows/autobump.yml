@@ -8,8 +8,7 @@ on:
 
 env:
   HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
-  CASKS: >
-    m1xxx
+  CASKS: m1xxx
 
 jobs:
   autobump:
@@ -19,11 +18,30 @@ jobs:
     steps:
     - name: Set up Homebrew
       uses: Homebrew/actions/setup-homebrew@master
+    - name: Install dependencies
+      run: brew install jq
     - name: Set up Git user
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
     - name: Bump casks
-      run: brew bump --open-pr --cask ${{ env.CASKS }}
+      run:
+        set -e
+        cd "$(brew --repo fwcd/mixxx)"
+
+        for cask in ${{ env.CASKS }}; do
+          echo "==> Checking $cask..."
+          status=`brew livecheck --json $cask`
+
+          if jq -e '.[0].version.outdated' <<< "$json" >/dev/null; then
+            latest_version=`jq -r '.[0].version.latest' <<< "$json"`
+
+            echo "==> Bumping outdated $cask to $latest_version..."
+            brew bump-cask-pr --write-only --commit --version "$latest_version" $cask
+          fi
+        done
+
+        git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/fwcd/homebrew-mixxx.git"
+      shell: bash
       env:
         HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
