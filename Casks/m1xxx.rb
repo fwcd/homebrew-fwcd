@@ -7,6 +7,8 @@ cask "m1xxx" do
   desc "Unofficial Mixxx build for Apple Silicon"
   homepage "https://github.com/fwcd/m1xxx"
 
+  conflicts_with cask: "mixxx"
+
   livecheck do
     url "https://github.com/fwcd/m1xxx/releases/latest"
     regex %r{tag/v([\w.-]+)}
