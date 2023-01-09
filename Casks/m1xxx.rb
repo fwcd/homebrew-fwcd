@@ -1,13 +1,11 @@
 cask "m1xxx" do
-  version "2.4.0.c43294.r804c447785"
-  sha256 "4f4afa96f8732664cfe05de94b4beaba723ded9140a5a1a2cbe19b0a0cd42393"
+  version "2.4.0.c43299.r9e43b25b0f"
+  sha256 "e8bdcc3b2e473bb2b4dff70c371275c2faba2f39d795546baaa65be8d7156d28"
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}.dmg"
   name "M1xxx"
   desc "Unofficial Mixxx build for Apple Silicon"
   homepage "https://github.com/fwcd/m1xxx"
-
-  conflicts_with cask: "mixxx"
 
   livecheck do
     url "https://github.com/fwcd/m1xxx/releases/latest"
@@ -18,6 +16,8 @@ cask "m1xxx" do
       headers["location"].scan(regex).map { |match| match[0] }
     end
   end
+
+  conflicts_with cask: "mixxx"
 
   app "Mixxx.app"
 end
