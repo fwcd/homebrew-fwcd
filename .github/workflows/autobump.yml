@@ -30,7 +30,8 @@ jobs:
         cd "$(brew --repo fwcd/fwcd)"
 
         for cask_path in Casks/*; do
-          cask="$(basename "$cask_path")"
+          cask_file="${cask_path##*/}"
+          cask="${cask_file%.*}"
 
           echo "==> Checking $cask..."
           status_json=`brew livecheck --json $cask`
