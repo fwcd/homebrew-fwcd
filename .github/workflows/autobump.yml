@@ -8,7 +8,6 @@ on:
 
 env:
   HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
-  CASKS: m1xxx
 
 jobs:
   autobump:
@@ -29,7 +28,9 @@ jobs:
         set -e
         cd "$(brew --repo fwcd/fwcd)"
 
-        for cask in ${{ env.CASKS }}; do
+        for cask_path in Casks/*; do
+          cask="$(basename "$cask_path")"
+
           echo "==> Checking $cask..."
           status_json=`brew livecheck --json $cask`
           echo "Status: $status_json"
