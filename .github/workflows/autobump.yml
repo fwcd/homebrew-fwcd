@@ -1,6 +1,7 @@
 name: Autobump
 
 on:
+  push:
   # Run every day at 8:00 AM
   schedule:
   - cron: '0 8 * * *'
