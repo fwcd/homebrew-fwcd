@@ -12,7 +12,7 @@ env:
 
 jobs:
   autobump:
-    if: github.repository == 'fwcd/homebrew-mixxx'
+    if: github.repository == 'fwcd/homebrew-fwcd'
     runs-on: macos-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
     - name: Bump casks
       run: |
         set -e
-        cd "$(brew --repo fwcd/mixxx)"
+        cd "$(brew --repo fwcd/fwcd)"
 
         for cask in ${{ env.CASKS }}; do
           echo "==> Checking $cask..."
@@ -47,5 +47,5 @@ jobs:
     - name: Push changes
       run: |
         set -e
-        cd "$(brew --repo fwcd/mixxx)"
-        git push "https://${{ github.actor }}:${{ github.token }}@github.com/fwcd/homebrew-mixxx.git"
+        cd "$(brew --repo fwcd/fwcd)"
+        git push "https://${{ github.actor }}:${{ github.token }}@github.com/fwcd/homebrew-fwcd.git"
