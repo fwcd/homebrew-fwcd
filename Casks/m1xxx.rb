@@ -1,6 +1,6 @@
 cask "m1xxx" do
-  version "2.5.0.c45239.r8a163877f0"
-  sha256 "aed8f8e83a9ecb990b3f0c9abecf687a81414b6061570483c0eb30a21c9a345f"
+  version "2.5.0.c45243.r8d0ded74be"
+  sha256 "02df66feee180595cbb50bd3a6a9c3157518de1003b53c2daa4fd6fbfc7aecf9"
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}.dmg"
   name "M1xxx"
