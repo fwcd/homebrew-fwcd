@@ -5,6 +5,7 @@ class TotemPlParser < Formula
   homepage "https://gitlab.gnome.org/GNOME/totem-pl-parser"
   url "https://gitlab.gnome.org/GNOME/totem-pl-parser/-/archive/V_3_26_6/totem-pl-parser-V_3_26_6.tar.gz"
   version "3.26.6"
+  revision 1
   sha256 "7219272a4863f823e2dd6d997e78d725de9e6071b1af1b478870f207731a8234"
 
   depends_on "glib"
@@ -23,7 +24,7 @@ class TotemPlParser < Formula
   end
 
   def install
-    system "meson", "setup", "build", *std_meson_args
+    system "meson", "setup", "build", *std_meson_args, "-Ddefault_library=both"
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"
   end
