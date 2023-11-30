@@ -5,10 +5,10 @@ cask "m1xxx" do
                                           intel: "min1015"
 
   version "2.5.0.c46027.r2c2e706b44"
-  sha256 arm:   "21b1fa03e9e3e442353b69ee7dcc22b92e265526443461f6e0a9c5d5fb28739f",
-         intel: "7ba5dea795e288967df412384bffbce0d2b80c2fbd66c4651a654582b4c010d8"
+  sha256 arm:   "94605b5aaa1a4004a07417c094b5bf127c2112abbd063cb40e25ed1b3379c3be",
+         intel: "52a7e762cb8bf9b5bd2834d1de8bd26d9fc277bbf533ae88c6e30beda2a2131e"
 
-  url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}-#{arch}-osx-#{deployment_target}.dmg"
+  url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}-#{arch}-osx-#{deployment_target}-release.dmg"
   name "M1xxx"
   desc "Unofficial build of the Free and Open Source DJ software Mixxx"
   homepage "https://github.com/fwcd/m1xxx"
