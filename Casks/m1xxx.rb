@@ -5,8 +5,8 @@ cask "m1xxx" do
                                           intel: "min1015"
 
   version "2.5.0.c46074.r6acfe63a39"
-  sha256 arm:   "0d83d4762931b0afbb800acf7d273d10d5317228d1d8f682e9d37f751b128235",
-         intel: "eb921e4d85bd76c26ee203f116430e79f4dcce3329ba606c9ef2fec3c4cc2c8e"
+  sha256 arm:   "44938abfb29bf531b729c75caadce37542aa73c6873ce0eb47d9621773dcb7e4",
+         intel: "49d8bc186f56b24e0308def0da6c42a2bb32ea34ed1ad188f29243e57f607b20"
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}-#{arch}-osx-#{deployment_target}-release.dmg"
   name "M1xxx"
