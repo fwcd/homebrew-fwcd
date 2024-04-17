@@ -4,9 +4,9 @@ cask "m1xxx" do
   deployment_target = on_arch_conditional arm:   "min1100",
                                           intel: "min1015"
 
-  version "2.5.0.c47240.r59a4374a44"
-  sha256 arm:   "2c55a992bd0c355ecdedb7a7df1e4f689b10a2d07e661d9c01e86f28628a0f6a",
-         intel: "6adff79035ef4472bb734059232b9888c32a46675a0a60108b98fb5a6e7cf619"
+  version "2.5.0.c47246.r395c70e5c2"
+  sha256 arm:   "7ecc82dce578830aa2d329a73634ab2ffd9abba276e1d072764b04dcac6f20ab",
+         intel: "f2cae26245dd352d480c23f0eba68d047bed1e7299be6bd014e4b33d2524463d"
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}-#{arch}-osx-#{deployment_target}-release.dmg"
   name "M1xxx"
