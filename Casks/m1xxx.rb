@@ -1,8 +1,7 @@
 cask "m1xxx" do
   arch arm:   "arm64",
        intel: "x64"
-  deployment_target = on_arch_conditional arm:   "min1100",
-                                          intel: "min1015"
+  deployment_target = "min1100"
 
   version "2.5.0.c47341.r67a41d9dcd"
   sha256 arm:   "36d1ba7ad20b2fa361afeb6b1d17dcfbed5200b0565815a9473ba3e4397d0371",
