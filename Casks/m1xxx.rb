@@ -4,9 +4,9 @@ cask "m1xxx" do
 
   deployment_target = "min1100"
 
-  version "2.5.0.c47423.r9c6b16e5a8"
-  sha256 arm:   "595de8d6a853589d6e84c300000205e4c543a6502b64c114f321d43ff32e34ff",
-         intel: "d95de2b1601d6447c221fae279c6f15846a635403a3efb82e145590e9b1d70be"
+  version "2.5.0.c47461.re32b1ede66"
+  sha256 arm:   "ab462680eed6ab5e4f0239879fad9f7236975a110786bf98d2fe7d15578e3745",
+         intel: "908b3e79e1575394286a2d2b3d63edd9039f1b8133a0195ba60f372968bc064d"
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}-#{arch}-osx-#{deployment_target}-release.dmg"
   name "M1xxx"
