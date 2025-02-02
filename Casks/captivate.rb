@@ -2,17 +2,17 @@ cask "captivate" do
   arch arm:   "-arm64",
        intel: ""
 
-  version "1.0.0"
-  sha256 arm:   "962e0731f780a4176a67a8c99bb83db427dc2d1c517766c4201f36b762f5205f",
-         intel: "8a32de665cf9c1bcd4ba42cef53cd60d8b1df9a68256bf56218beb682a8e99c9"
+  version "1.0.2.c601.r75dddd3"
+  sha256 arm:   "dff487dca8c7a71dd6dec390addb756b445cc997ff3c98fe4612ba50fde420b6",
+         intel: "2a6e3ece73a2388f0be66f8484a8547bf05871c2de2f5fd781a942cff0845aaf"
 
-  url "https://github.com/spensbot/captivate/releases/download/v#{version}/Captivate-#{version}#{arch}.dmg"
+  url "https://github.com/fwcd/captivate/releases/download/v#{version}/Captivate-#{version[/^\d+(?:\.\d+)*/]}#{arch}.dmg"
   name "Captivate"
-  desc "Visual & Lighting Synth"
-  homepage "https://github.com/spensbot/captivate"
+  desc "Visual & Lighting Synth (unofficial fork)"
+  homepage "https://github.com/fwcd/captivate"
 
   livecheck do
-    url "https://github.com/spensbot/captivate/releases/latest"
+    url "https://github.com/fwcd/captivate/releases/latest"
     regex %r{tag/v([\w.-]+)}
     strategy :header_match do |headers, regex|
       next if headers["location"].blank?
