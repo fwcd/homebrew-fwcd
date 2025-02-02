@@ -34,7 +34,7 @@ jobs:
           cask="${cask_file%.*}"
 
           echo "==> Checking $cask..."
-          status_json=`brew livecheck --json $cask`
+          status_json=`brew livecheck --cask --json $cask`
           echo "Status: $status_json"
 
           if jq -e '.[0].version.outdated' <<< "$status_json" >/dev/null; then
