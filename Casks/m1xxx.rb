@@ -10,7 +10,7 @@ cask "m1xxx" do
 
   url "https://github.com/fwcd/m1xxx/releases/download/v#{version}/mixxx-#{version}-#{arch}-osx-#{deployment_target}-release.dmg"
   name "M1xxx"
-  desc "Unofficial build of the Free and Open Source DJ software Mixxx"
+  desc "Free and Open Source DJ software (unofficial build)"
   homepage "https://github.com/fwcd/m1xxx"
 
   livecheck do
