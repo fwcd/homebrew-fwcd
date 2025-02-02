@@ -2,9 +2,9 @@ cask "captivate" do
   arch arm:   "-arm64",
        intel: ""
 
-  version "1.0.2.c601.r75dddd3"
-  sha256 arm:   "dff487dca8c7a71dd6dec390addb756b445cc997ff3c98fe4612ba50fde420b6",
-         intel: "2a6e3ece73a2388f0be66f8484a8547bf05871c2de2f5fd781a942cff0845aaf"
+  version "1.0.2.c606.rc6ffa3f"
+  sha256 arm:   "4b9bc102f517b538119c6b57152d23aa822a5ca28535a0d78218e0f49272436e",
+         intel: "626ac07c57973f8b4e9f6a395165addad64be8266ea3229f3a81f61dba778b0a"
 
   url "https://github.com/fwcd/captivate/releases/download/v#{version}/Captivate-#{version[/^\d+(?:\.\d+)*/]}#{arch}.dmg"
   name "Captivate"
