@@ -41,7 +41,7 @@ jobs:
             latest_version=`jq -r '.[0].version.latest' <<< "$status_json"`
 
             echo "==> Bumping outdated $cask to $latest_version..."
-            brew bump-cask-pr --write-only --commit --version "$latest_version" $cask
+            brew bump-cask-pr --write-only --no-fork --commit --version "$latest_version" $cask
           fi
         done
       shell: bash
